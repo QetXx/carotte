@@ -4,6 +4,7 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tracknotes/screens/home.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -17,8 +18,10 @@ class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 5, 55, 96),
       resizeToAvoidBottomInset: false,
       bottomSheet: Container(
+        color: Color.fromARGB(255, 5, 55, 96),
         padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
         height: 70,
         child: Row(
@@ -38,10 +41,20 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
             FloatingActionButton(
               onPressed: () {
-                controller.nextPage(
-                  duration: Duration(milliseconds: 600),
-                  curve: Curves.easeIn,
-                );
+                if (controller.page!.toInt() == 2) {
+                  //next page
+                  Get.to(
+                    HomePage(),
+                    transition: Transition.cupertino,
+                    duration: Duration(milliseconds: 900),
+                    popGesture: true,
+                  );
+                } else {
+                  controller.nextPage(
+                    duration: Duration(milliseconds: 600),
+                    curve: Curves.easeIn,
+                  );
+                }
               },
               child: Icon(Icons.arrow_forward_rounded),
             )
@@ -50,6 +63,7 @@ class _OnBoardingState extends State<OnBoarding> {
       ),
       body: PageView(
         physics: BouncingScrollPhysics(),
+        controller: controller,
         children: [
           OnBoardingPage(
             asset: "assets/lotties/parent.json",
@@ -67,7 +81,6 @@ class _OnBoardingState extends State<OnBoarding> {
             description: "onboardDescription3".tr,
           ),
         ],
-        controller: controller,
       ),
     );
   }
