@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SwitchPages(),
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 3, 46, 80),
+        scaffoldBackgroundColor: const Color(0xff2C3079),
       ),
     );
   }
@@ -33,8 +33,9 @@ class MyApp extends StatelessWidget {
 
 class SwitchPages extends StatelessWidget {
   const SwitchPages({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return isFirst ? const OnBoarding() : HomePage();
+    return isFirst ? const OnBoarding() : const HomePage();
   }
 }

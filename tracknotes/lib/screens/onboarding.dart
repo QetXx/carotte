@@ -18,10 +18,10 @@ class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 5, 55, 96),
+      backgroundColor: Color(0xff2C3079),
       resizeToAvoidBottomInset: false,
       bottomSheet: Container(
-        color: Color.fromARGB(255, 5, 55, 96),
+        color: Color(0xff2C3079),
         padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
         height: 70,
         child: Row(
@@ -122,7 +122,7 @@ class OnBoardingPage extends StatelessWidget {
           Text(
             title!,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           SizedBox(
             height: 20,
