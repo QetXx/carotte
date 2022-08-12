@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// creation d'une class theme
 class ThemeCarotte {
   static final ligthTheme = ThemeData.light().copyWith(
     appBarTheme: const AppBarTheme(

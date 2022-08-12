@@ -32,11 +32,11 @@ class _OnBoardingState extends State<OnBoarding> {
               count: 3,
               effect: ExpandingDotsEffect(
                 expansionFactor: 2.2,
-                dotColor: Colors.white,
-                activeDotColor: Theme.of(context).colorScheme.primary,
-                dotWidth: 8,
+                dotColor: Colors.white24,
+                activeDotColor: Colors.white,
+                dotWidth: 10,
                 dotHeight: 10,
-                spacing: 3,
+                spacing: 8,
               ),
             ),
             FloatingActionButton(

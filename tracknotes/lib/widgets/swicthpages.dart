@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tracknotes/views/home.dart';
-import 'package:tracknotes/views/onboarding.dart';
+import 'package:tracknotes/views/startscreen/onboarding.dart';
 
 class SwitchPages extends StatefulWidget {
   const SwitchPages({Key? key}) : super(key: key);
