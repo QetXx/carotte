@@ -13,7 +13,7 @@ class ThemeCarotte {
       onPrimary: Colors.white,
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: const Color(0xff2C3079),
+      backgroundColor: Color(0xff2C3079),
       foregroundColor: Colors.white,
     ),
     bottomSheetTheme: const BottomSheetThemeData(

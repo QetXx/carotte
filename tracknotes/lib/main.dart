@@ -38,7 +38,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
       splashIconSize: 300,
       backgroundColor: Colors.white,
       nextScreen: const SwitchPages(),
-      splashTransition: SplashTransition.slideTransition,
+      splashTransition: SplashTransition.fadeTransition,
     );
   }
 }

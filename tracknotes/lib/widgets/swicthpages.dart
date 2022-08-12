@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tracknotes/views/home.dart';
 import 'package:tracknotes/views/startscreen/onboarding.dart';
+import 'package:tracknotes/views/welcome.dart';
 
 class SwitchPages extends StatefulWidget {
   const SwitchPages({Key? key}) : super(key: key);
@@ -32,6 +32,6 @@ class _SwitchPagesState extends State<SwitchPages> {
 
   @override
   Widget build(BuildContext context) {
-    return isFirst ? const OnBoarding() : const HomePage();
+    return isFirst == false ? const OnBoarding() : const Welcoome();
   }
 }
