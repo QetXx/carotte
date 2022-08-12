@@ -92,13 +92,13 @@ class _OnBoardingState extends State<OnBoarding> {
             description: "Suivez les cours de vos enfants ou que vous soyez",
           ),
           OnBoardingPage(
-            asset: "assets/lotties/parent.json",
+            asset: "assets/lotties/teachers.json",
             title: "Enseignants",
             description:
                 "Rendez vous la vie facile avec  Suivi-scolaire pour rendre les notes de vos eleves disponible en moins de temps",
           ),
           OnBoardingPage(
-            asset: "assets/lotties/parent.json",
+            asset: "assets/lotties/school.json",
             title: "Etablissements",
             description:
                 "Avec suivi scolaire les notes de vos eleves sont verifié et les parents sont au parfun des notes des enfants",
