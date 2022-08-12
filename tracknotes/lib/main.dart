@@ -1,16 +1,11 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tracknotes/screens/home.dart';
-import 'package:tracknotes/screens/onboarding.dart';
+import 'package:tracknotes/themes/theme.dart';
+import 'package:tracknotes/widgets/swicthpages.dart';
 
-late bool isFirst;
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  final prefs = await SharedPreferences.getInstance();
-  isFirst = prefs.getBool('isFirst') ?? true;
-
   runApp(const MyApp());
 }
 
@@ -20,22 +15,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Suivi Notes",
-      locale: Get.deviceLocale,
-      debugShowCheckedModeBanner: false,
-      home: const SwitchPages(),
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xff2C3079),
-      ),
-    );
+        title: "Suivi Notes",
+        locale: Get.deviceLocale,
+        debugShowCheckedModeBanner: false,
+        home: const MySplashScreen(),
+        theme: ThemeCarotte.darkTheme);
   }
 }
 
-class SwitchPages extends StatelessWidget {
-  const SwitchPages({Key? key}) : super(key: key);
+class MySplashScreen extends StatefulWidget {
+  const MySplashScreen({Key? key}) : super(key: key);
 
   @override
+  State<MySplashScreen> createState() => _MySplashScreenState();
+}
+
+class _MySplashScreenState extends State<MySplashScreen> {
+  @override
   Widget build(BuildContext context) {
-    return isFirst ? const OnBoarding() : const HomePage();
+    return AnimatedSplashScreen(
+      splash: 'assets/images/logo 2.png',
+      splashIconSize: 300,
+      backgroundColor: Colors.white,
+      nextScreen: const SwitchPages(),
+      splashTransition: SplashTransition.slideTransition,
+    );
   }
 }

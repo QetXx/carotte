@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:tracknotes/screens/home.dart';
+import 'package:tracknotes/views/home.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -32,9 +32,9 @@ class _OnBoardingState extends State<OnBoarding> {
               count: 3,
               effect: ExpandingDotsEffect(
                 expansionFactor: 2.2,
-                dotColor: Colors.grey.shade300,
+                dotColor: Colors.white,
                 activeDotColor: Theme.of(context).colorScheme.primary,
-                dotWidth: 5,
+                dotWidth: 8,
                 dotHeight: 10,
                 spacing: 3,
               ),
@@ -56,29 +56,52 @@ class _OnBoardingState extends State<OnBoarding> {
                   );
                 }
               },
-              child: Icon(Icons.arrow_forward_rounded),
+              child: Icon(Icons.arrow_forward_rounded, size: 25.0),
             )
           ],
         ),
       ),
+      appBar: AppBar(
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: TextButton(
+              onPressed: () {
+                Get.to(
+                  HomePage(),
+                  transition: Transition.cupertino,
+                  duration: Duration(milliseconds: 900),
+                  popGesture: true,
+                );
+              },
+              child: Text(
+                "passer",
+                style: Theme.of(context).textTheme.bodyText2,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: PageView(
         physics: BouncingScrollPhysics(),
         controller: controller,
-        children: [
+        children: const [
           OnBoardingPage(
             asset: "assets/lotties/parent.json",
-            title: "onboardTitle1".tr,
-            description: "onboardDescription1".tr,
+            title: "Parents",
+            description: "Suivez les cours de vos enfants ou que vous soyez",
           ),
           OnBoardingPage(
             asset: "assets/lotties/parent.json",
-            title: "onboardTitle2".tr,
-            description: "onboardDescription2".tr,
+            title: "Enseignants",
+            description:
+                "Rendez vous la vie facile avec  Suivi-scolaire pour rendre les notes de vos eleves disponible en moins de temps",
           ),
           OnBoardingPage(
             asset: "assets/lotties/parent.json",
-            title: "onboardTitle3".tr,
-            description: "onboardDescription3".tr,
+            title: "Etablissements",
+            description:
+                "Avec suivi scolaire les notes de vos eleves sont verifié et les parents sont au parfun des notes des enfants",
           ),
         ],
       ),
@@ -122,7 +145,7 @@ class OnBoardingPage extends StatelessWidget {
           Text(
             title!,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.headline1,
           ),
           SizedBox(
             height: 20,
@@ -130,7 +153,7 @@ class OnBoardingPage extends StatelessWidget {
           Text(
             description!,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
                   color: Colors.grey,
                 ),
           ),
