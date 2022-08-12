@@ -1,5 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tracknotes/views/auth/login_parent.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({Key? key}) : super(key: key);
@@ -74,7 +77,7 @@ class Authentication extends StatelessWidget {
                     color: Colors.white10,
                     onPressed: () {
                       Get.to(
-                        const Authentication(),
+                        const LoginInScreen(),
                         transition: Transition.cupertino,
                         duration: const Duration(milliseconds: 100),
                         popGesture: true,

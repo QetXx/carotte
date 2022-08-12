@@ -36,7 +36,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
     return AnimatedSplashScreen(
       splash: 'assets/images/logo 2.png',
       splashIconSize: 300,
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xff2C3079),
       nextScreen: const SwitchPages(),
       splashTransition: SplashTransition.fadeTransition,
     );
